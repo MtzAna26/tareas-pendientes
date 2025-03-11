@@ -1,3 +1,4 @@
+
 <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
@@ -48,7 +49,7 @@
     <!-- Enlace de Registro -->
     <div class="mt-4 text-center">
         <p class="text-sm text-gray-600">¿No tienes cuenta?</p>
-        <a href="{{ route('register') }}" class="underline text-sm text-blue-600 hover:text-blue-900">
+        <a href="{{ route('register') }}" class="underline text-sm text-black-600 hover:text-blue-900">
             {{ __('Regístrate aquí') }}
         </a>
     </div>

@@ -8,7 +8,19 @@
     <style>
         .completed {
             text-decoration: line-through;
-            color: #6c757d;
+            color:rgb(71, 70, 70);
+        }
+        .btn-custom {
+            background-color: #00FF00;
+            border-color: #00FF00; 
+            --bs-btn-hover-bg: #32CD32;
+            color: white;
+            }
+        .btn-custom-danger{
+            background-color:rgb(255, 17, 0);
+            border-color: rgb(255, 17, 0); 
+            --bs-btn-hover-bg:rgb(232, 69, 69);
+            color: white; 
         }
         .task-card {
             margin-bottom: 15px;
@@ -44,12 +56,12 @@
                         @if (!$tarea->completed)
                             <form action="{{ route('tareas.update', $tarea) }}" method="POST" class="d-inline">
                                 @csrf @method('PATCH')
-                                <button type="submit" class="btn btn-success btn-sm">✔</button>
+                                <button type="submit" class="btn btn-success btn-custom">✔</button>
                             </form>
                         @endif
                         <form action="{{ route('tareas.destroy', $tarea) }}" method="POST" class="d-inline">
                             @csrf @method('DELETE')
-                            <button type="submit" class="btn btn-danger btn-sm">🗑</button>
+                            <button type="submit" class="btn btn-danger btn-custom-danger">🗑</button>
                         </form>
                     </div>
                 </li>
@@ -59,7 +71,7 @@
         <!-- Botón de logout -->
         <form action="{{ route('logout') }}" method="POST" class="d-inline mt-4">
             @csrf
-            <button type="submit" class="btn btn-danger">Cerrar sesión</button>
+            <button type="submit" class="btn btn-danger btn-custom-danger">Cerrar sesión</button>
         </form>
     </div>
 
